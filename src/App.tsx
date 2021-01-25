@@ -18,10 +18,6 @@ const useStyles = makeStyles(theme => ({
         height: '100%',
         flex: 1
     },
-    appBar: {
-        zIndex: theme.zIndex.drawer + 1
-        // width: 'calc(100% - 164px)', marginLeft: '164px'
-    },
     drawer: {
         width: drawerWidth,
         flexShrink: 0
@@ -33,7 +29,7 @@ const useStyles = makeStyles(theme => ({
     content: {
         flexGrow: 1,
         flex: 1,
-        height: '100vh'
+        height: '100%'
     }
 }))
 
@@ -45,14 +41,6 @@ function _ClashyApp({ currentTab }: Props) {
     const classes = useStyles()
     return (
     <div className={classes.root}>
-        <AppBar position='fixed' className={classes.appBar}>
-            <Toolbar>
-                {getIcon(currentTab)}
-                <Typography variant='h6'>
-                    {currentTab}
-                </Typography>
-            </Toolbar>
-        </AppBar>
         <Drawer
             className={classes.drawer}
             variant={'persistent'}

@@ -13,15 +13,17 @@ function initializeTray(_window, _createWindow) {
     const icon = path.resolve(app.getAppPath(), 'src', 'assets', 'tray-icon.png')
     tray = new Tray(icon)
     const contextMenu = Menu.buildFromTemplate([
-        { label: 'Show Clashy', click: showWindow},
+        { label: '主界面', click: showWindow},
         ...(isWindows() ? [] : [{
             label: 'Copy export command',
             click: copyExportCommand
         }]),
-        { label: 'Quit', click: quitApp}
+        { label: '退出', click: quitApp}
     ])
-    tray.setToolTip('Clashy')
+    tray.setToolTip('XiXi')
+    // 托盘展示内容
     tray.setContextMenu(contextMenu)
+    // 双击 托盘图标，弹出主界面
     tray.on('double-click', () => {
         if (isWindows()) {
             showWindow()
