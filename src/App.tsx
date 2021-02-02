@@ -8,8 +8,6 @@ import './App.css'
 import { AppBar, Toolbar, Typography } from '@material-ui/core'
 import { RootState } from './store/reducers'
 
-import { getIcon } from './utils'
-
 const drawerWidth = 122
 
 const useStyles = makeStyles(theme => ({
@@ -17,6 +15,10 @@ const useStyles = makeStyles(theme => ({
         display: 'flex',
         height: '100%',
         flex: 1
+    },
+    appBar: {
+        width: `calc(100% - ${drawerWidth}px)`,
+        marginLeft: drawerWidth,
     },
     drawer: {
         width: drawerWidth,
@@ -41,6 +43,12 @@ function _ClashyApp({ currentTab }: Props) {
     const classes = useStyles()
     return (
     <div className={classes.root}>
+        <AppBar position="fixed" className={classes.appBar}>
+            <Toolbar>
+              <Typography variant="h6" noWrap>
+              </Typography>
+            </Toolbar>
+        </AppBar>
         <Drawer
             className={classes.drawer}
             variant={'persistent'}

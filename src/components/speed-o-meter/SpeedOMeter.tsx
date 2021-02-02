@@ -40,6 +40,7 @@ export function SpeedOMeter() {
     )
 }
 
+// 单位转换
 function parseSpeed(input: number): string {
     let speed = Number((input || 0) / 1024)
     let suffix = 'K'

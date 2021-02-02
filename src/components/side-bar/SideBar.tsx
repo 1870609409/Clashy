@@ -7,6 +7,7 @@ import { RootState } from '../../store/reducers'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import { SpeedOMeter } from '../speed-o-meter'
+import { ListItemIcon, ListItemText } from '@material-ui/core'
 
 interface Props {
     currentTab: string,
@@ -32,13 +33,16 @@ const _SideBar = ({ currentTab, switchTab }: Props) => {
                     }
                     // 显示中文， key 为英文
                     const eachCN = APP_TABS_CN[idx];
+
                     return <ListItem
                         button
                         alignItems='center'
                         key={each}
                         style={style}
                         onClick={onMenuItemClick.bind(null, each)}
-                    >{eachCN}</ListItem>
+                    >
+                        <ListItemText primary={eachCN} />
+                    </ListItem>
                 })}
             </List>
         </div>

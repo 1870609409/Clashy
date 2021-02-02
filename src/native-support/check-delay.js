@@ -2,6 +2,7 @@ const { fetchHttp } = require('./utils')
 
 const PROXIES_URL = 'http://127.0.0.1:2390/proxies'
 
+// 延迟检测
 async function requestDelay(proxy) {
     return fetchHttp(`${PROXIES_URL}/${proxy}/delay?timeout=10000&url=https%3A%2F%2Fwww.google.com`, 'GET', {})
         .then(r => {
