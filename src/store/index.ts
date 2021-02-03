@@ -12,6 +12,7 @@ type StoreType = Store<RootState> & {
     close?: any
 }
 
+// 异步操作框架; 异步操作处理完毕之后，再改变界面 
 const sagaMiddleWare = createSagaMiddleWare()
 let _store: StoreType
 if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
@@ -21,6 +22,7 @@ if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
 }
 _store.runSaga = sagaMiddleWare.run
 _store.close = () => store.dispatch(END)
+// 启动监听的 saga
 _store.runSaga(rootSaga)
 
 export const store = _store

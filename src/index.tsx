@@ -7,6 +7,9 @@ import * as serviceWorker from './serviceWorker'
 import { subscribeIPC } from './native-support/message-queue'
 import LoginDialog from './components/login/login'
 
+// 整体使用 react + redux
+// UI 跟 逻辑 拆分
+
 // 启动IPC监听
 subscribeIPC()
 

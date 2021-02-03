@@ -71,6 +71,7 @@ const mapState = (state: RootState) => ({
     currentTab: state.app.get('currentTab')
 })
 
+// connect 将UI组件跟容器组件绑定
 const ClashyApp = connect(mapState, null)(_ClashyApp)
 
 class App extends React.Component {

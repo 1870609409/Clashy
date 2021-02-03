@@ -50,6 +50,10 @@ export default function LoginDialog() {
   const handleLogin = () => {
     setOpen(false);
 
+    // 发送http 消息，消息回来之后，才能进入主界面
+
+    return;
+
     // 显示主界面
     const root = document.getElementById('root');
     if (root) {
@@ -85,11 +89,7 @@ export default function LoginDialog() {
   return (
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         <DialogTitle 
-        id="form-dialog-title"
-        root: {
-
-        }
-        >XiXi加速器</DialogTitle>
+        id="form-dialog-title">XiXi加速器</DialogTitle>
         <DialogContent>
           <div>
             <FormControl className={clsx(classes.margin, classes.textField)} variant="outlined">
