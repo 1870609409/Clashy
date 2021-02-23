@@ -1,4 +1,4 @@
-import { request, requestChunk, ChunkCallback } from './base'
+import { myRequest } from './base'
 
 const BaseURL = 'https://xixi.ph'
 
@@ -47,7 +47,9 @@ function getFullUrl(apiIndex: number) {
     return fullUrl
 }
 
-export async function requestLogin(email:string, password: string) {
-    const fullUrl = `${getFullUrl(AuthLogin)}?email=${email}&passwd=${password}&code=&remember_me=on`; 
-    return request(fullUrl)
+export async function requestLogin(email?:string, password?: string) {
+// export async function requestLogin(email:any, password: any) {
+    const url = getFullUrl(AuthLogin);
+    const params = `email=${email}&passwd=${password}&code=&remember_me=on`; 
+    return myRequest(url, 'POST', params)
 }

@@ -5,9 +5,9 @@ import App from './App'
 import * as serviceWorker from './serviceWorker'
 
 import { subscribeIPC } from './native-support/message-queue'
-import LoginDialog from './components/login/login'
+import LoginUI from './components/login/login'
 
-// 整体使用 react + redux
+// 整体使用 react + redux + material-ui
 // UI 跟 逻辑 拆分
 
 // 启动IPC监听
@@ -20,7 +20,7 @@ const root = document.getElementById('root');
 if (root){
     root.style.display="none";
 }
-ReactDOM.render(<LoginDialog />, document.getElementById('login'))
+ReactDOM.render(<LoginUI />, document.getElementById('login'))
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

@@ -1,5 +1,5 @@
 // 访问广告后台的 API
-import { request, requestChunk, ChunkCallback } from './base'
+import { myRequest, requestChunk, ChunkCallback } from './base'
 const CONFIG_URL = '/configs'
 const PROXIES_URL = '/proxies'
 
@@ -23,7 +23,7 @@ function getFullUrl(apiIndex: number) {
 
 // 请求后台版本信息
 export async function requestGetVersion() {
-    return request(getFullUrl(GetVersion))
+    return myRequest(getFullUrl(GetVersion))
 }
 
 

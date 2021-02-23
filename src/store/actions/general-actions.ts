@@ -10,6 +10,7 @@ export enum GeneralActions {
     gotError = 'GENERAL_GOT_ERROR'
 }
 
+// 动作类型ID，跟所需要的数据放在一起
 export interface TGeneralAction {
     type: GeneralActions
     saving?: boolean
